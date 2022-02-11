@@ -1,0 +1,28 @@
+package models;
+
+public class Contcat {
+	private int ConatacID;
+	private String Email;
+	private String NewMessage;
+	
+	public int getConatacID() {
+		return ConatacID;
+	}
+	public void setConatacID(int conatacID) {
+		ConatacID = conatacID;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
+	}
+	public String getNewMessage() {
+		return NewMessage;
+	}
+	public void setNewMessage(String newMessage) {
+		NewMessage = newMessage;
+	}
+	
+	
+}

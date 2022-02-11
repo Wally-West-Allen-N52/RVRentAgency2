@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="models.Contcat"/>
+    <fullyQualifiedTypeName name="models.Contact"/>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.nio.file.attribute.AclEntry"/>
+    <fullyQualifiedTypeName name="dao.ContactUsDao"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.standard.Destination"/>
+    <fullyQualifiedTypeName name="main.DestinationTest"/>
+    <fullyQualifiedTypeName name="dao.PromotionDao"/>
+    <fullyQualifiedTypeName name="javax.naming.spi.DirStateFactory.Result"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="factory.ConnectionFactory"/>
+    <fullyQualifiedTypeName name="dao.HomeDao"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.metal.MetalIconFactory.FileIcon16"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="models.Promotion"/>
+    <fullyQualifiedTypeName name="models.Home"/>
+    <fullyQualifiedTypeName name="dao.DestinationDao"/>
+    <fullyQualifiedTypeName name="models.Destination"/>
+    <fullyQualifiedTypeName name="models.ContactUs"/>
+</qualifiedTypeNameHistroy>

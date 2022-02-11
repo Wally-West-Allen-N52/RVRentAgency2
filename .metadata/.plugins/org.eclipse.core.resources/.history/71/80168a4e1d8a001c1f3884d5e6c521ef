@@ -1,0 +1,14 @@
+package main;
+
+import dao.ContactUsDao;
+import models.ContactUs;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ContactUsDao contactUsDao = new ContactUsDao();
+		
+		
+	}
+
+}

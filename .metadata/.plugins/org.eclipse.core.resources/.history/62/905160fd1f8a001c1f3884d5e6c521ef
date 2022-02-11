@@ -1,0 +1,17 @@
+package main;
+
+import dao.DestinationDao;
+
+public class DestinationTest {
+
+	public static void main(String[] args) {
+		DestinationDao destinationDao = new DestinationDao();
+
+		ContactUs contactUs = new ContactUs();
+		contactUs.setEmail("wto@gmail.com");
+		contactUs.setPhone("6538-7652");
+		contactUs.setNewMessage("Message test");
+		ContactUsDao.save(contactUs);
+	}
+
+}

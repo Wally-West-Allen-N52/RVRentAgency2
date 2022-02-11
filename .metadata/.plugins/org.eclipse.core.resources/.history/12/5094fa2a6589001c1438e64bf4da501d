@@ -1,0 +1,9 @@
+package models;
+
+public class Conatac {
+	private int ConatacID;
+	private String Email;
+	private String NewMessage;
+	
+	
+}

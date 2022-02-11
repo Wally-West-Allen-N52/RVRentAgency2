@@ -1,0 +1,110 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import factory.ConnectionFactory;
+import models.ContactUs;
+
+public class ContactUsDao {
+
+	public void save(ContactUs contactUs) {
+
+		String sql = "INSERT INTO ContactUs (Email, Phone, NewMessage) VALUES (?, ?, ?)";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, contactUs.getEmail());
+			pstm.setString(2, contactUs.getPhone());
+			pstm.setString(3, contactUs.getNewMessage());
+
+			pstm.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void removeById(int ContactID) {
+		String sql = "DELETE FROM Contact WHERE ContactID = ?";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, ContactID);
+
+			pstm.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void update(ContactUs contactUs) {
+		String sql = "UPDATE Contact SET Email = ?, Phone = ?, NewMessage = ? WHERE ContactID";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			// Create a DB connection
+			conn = ConnectionFactory.createConnectionSQLServer();
+			// Class used to execute the query
+			pstm = conn.prepareStatement(sql);
+			// Add value at the first parameter
+			pstm.setString(1, destination.getTakeHere());
+			// Add value at the second parameter
+			pstm.setString(2, destination.getDeliverThere());
+			// Execute the SQL to insert data
+			pstm.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// Close the connections
+			try {
+				if (conn != null) {
+					conn.close();
+				}
+
+				if (pstm != null) {
+					pstm.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

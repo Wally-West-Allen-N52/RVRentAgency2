@@ -1,0 +1,25 @@
+package factory;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ConnectionFactory {
+
+	public static Connection createConnectionSQLServer() throws Exception {
+		
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		Connection connection =
+				DriverManager.getConnection(
+				"jdbc:sqlserver://localhost" // server name
+				+ "databaseName=RVRentAgencydb2"
+				+ "user=sa"
+				+ "password=W471984wN250299n");
+		return connection;
+	}
+	public static void mais(String[] args) {
+		Connection conn = createConnectionSQLServer();
+		if (conn != null) {
+			System.out.println("Successful connection " + conn);
+		}
+	}
+}

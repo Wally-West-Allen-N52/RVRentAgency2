@@ -1,0 +1,29 @@
+package factory;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ConnectionFactory {
+
+	public static Connection createConnectionSQLServer() throws Exception {
+		// Load JVM
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+		Connection connection = DriverManager.getConnection(
+				"jdbc:sqlserver://DESKTOP-9FVCFDK]"
+				+ "" // Server name
+				+ "databaseName=RVRentAgencyDB" // database name
+				+ "user=sa"
+				+ "password=W471984wN250299n"); // Password
+		return connection;
+	}
+
+	// Connection test
+	public static void main(String[] args) throws Exception {
+		Connection conn = createConnectionSQLServer(); // DB connection recovery
+		if (conn != null) {
+			System.out.println("Successful Connection " + conn);
+			conn.close();
+		}
+	}
+}

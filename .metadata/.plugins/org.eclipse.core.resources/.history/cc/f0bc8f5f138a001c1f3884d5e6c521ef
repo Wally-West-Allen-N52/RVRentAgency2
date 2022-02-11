@@ -1,0 +1,13 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import models.ContactUs;
+
+public class ContactUsDao {
+	
+	public void save (ContactUs contactUS) {
+		
+	}
+}

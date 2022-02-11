@@ -1,0 +1,11 @@
+package models;
+
+public class Contcat {
+	private int ContactID;
+	private String Email;
+	private String NewMessage;
+	
+	
+	
+	
+}

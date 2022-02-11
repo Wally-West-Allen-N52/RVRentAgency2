@@ -1,0 +1,17 @@
+package main;
+
+
+public class DestinationTest {
+
+	public static void main(String[] args) {
+		ContactUsDao contactUsDao = new ContactUsDao();
+		
+		ContactUs contactUs = new ContactUs();
+		contactUs.setEmail("wto@gmail.com");
+		contactUs.setPhone("6538-7652");
+		contactUs.setNewMessage("Message test");
+		ContactUsDao.save(contactUs);
+	}	
+	}
+
+}

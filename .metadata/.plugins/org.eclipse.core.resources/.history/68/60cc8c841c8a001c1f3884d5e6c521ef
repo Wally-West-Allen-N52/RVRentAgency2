@@ -1,0 +1,33 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import factory.ConnectionFactory;
+import models.ContactUs;
+
+public class ContactUsDao {
+	
+	public void save (ContactUs contactUs) {
+		
+		String sql = "INSERT INTO ContactUs (Email, Phone, NewMessage) VALUES (?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, contactUs.getEmail());
+			pstm.setString(2, contactUs.getPhone());
+			pstm.setString(3, contactUs.getNewMessage());
+			
+			pstm.execute();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			
+		}
+	}
+}

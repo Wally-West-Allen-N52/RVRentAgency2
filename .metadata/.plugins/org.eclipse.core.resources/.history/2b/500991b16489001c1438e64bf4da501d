@@ -1,0 +1,9 @@
+package models;
+
+public class Destination {
+	private int DestinationID;
+	private String TakeHere;
+	private String DeliverThere;
+	
+	
+}

@@ -1,0 +1,15 @@
+package models;
+
+public class Home {
+	private int HomeID;
+	private String ClientName;
+	
+	private int Destination; // use DestinationID if necessary 
+	private Destination destination;
+	private int Promotion; // use PromotionID if necessary
+	private Promotion promotion;
+	private int Contact;
+	private Contact contact; 
+	
+	
+}

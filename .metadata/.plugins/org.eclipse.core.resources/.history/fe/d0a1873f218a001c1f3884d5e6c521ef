@@ -1,0 +1,15 @@
+package main;
+
+import dao.PromotionDao;
+
+public class PromotionTest {
+
+	public static void main(String[] args) {
+		
+		PromotionDao promotionDao = new PromotionDao();
+		
+		
+
+	}
+
+}

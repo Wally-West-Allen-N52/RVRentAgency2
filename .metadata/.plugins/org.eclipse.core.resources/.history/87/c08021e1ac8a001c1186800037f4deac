@@ -1,0 +1,23 @@
+package main;
+
+import dao.DestinationDao;
+import models.Destination;
+
+public class DestinationTest {
+
+	public static void main(String[] args) {
+		DestinationDao destinationDao = new DestinationDao();
+
+		Destination destination = new Destination();
+		destination.setTakeHere("Monguaguarará");
+		destination.setDeliverThere("Montes Claros");
+		
+		
+	
+//		DestinationDao.save(destination);
+
+		
+		
+	}
+
+}

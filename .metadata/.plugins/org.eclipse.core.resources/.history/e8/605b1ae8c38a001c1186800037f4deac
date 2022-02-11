@@ -1,0 +1,26 @@
+package main;
+
+import dao.PromotionDao;
+import models.Promotion;
+
+public class PromotionTest {
+
+	public static void main(String[] args) {
+		PromotionDao promotionDao = new PromotionDao();
+		
+//		Promotion promotion = new Promotion();
+//		promotion.setPromotion("Sem promoção Legal");
+//		promotion.setPrice(0000);
+//		
+//		promotionDao.save(promotion);
+		
+		// ========================== Remove method =========================
+		promotionDao.removeById(2);
+		
+		// =========================== update method ========================
+		Promotion promotion1 = new Promotion();
+		promotion1.setPromotionID(3);
+		
+	}
+
+}

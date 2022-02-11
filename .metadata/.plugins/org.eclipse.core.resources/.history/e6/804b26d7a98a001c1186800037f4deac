@@ -1,0 +1,146 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import factory.ConnectionFactory;
+import models.Destination;
+
+public class DestinationDao {
+
+	public static void save(Destination destination) {
+
+		String sql = "INSERT INTO Destination (TakeHere, DeliverThere) VALUES (?, ?)";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, destination.getTakeHere());
+			pstm.setString(2, destination.getDeliverThere());
+
+			pstm.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void removeById(int DestinationID) {
+		String sql = "DELETE FROM Destination WHERE DestinationID = ?";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			
+			pstm.setInt(1, DestinationID);
+			
+			pstm.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void update(Destination destination) {
+		String sql = "UPDATE Destination SET TakeHere = ?, DeliverThere = ? WHERE DestinationID";
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			// Create a DB connection
+			conn = ConnectionFactory.createConnectionSQLServer();
+			// Class used to execute the query
+			pstm = conn.prepareStatement(sql);
+			// Add value at the first parameter
+			pstm.setString(1, destination.getTakeHere());
+			// Add value at the second parameter
+			pstm.setString(2, destination.getDeliverThere());
+			// Execute the SQL to insert data
+			pstm.execute();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	// public List<Destination> getDestinations() {
+//		String sql = "SELECT * FROM Destination";
+//		List<Destination> destinations = new ArrayList<Destination>();
+//		
+//		Connection conn = null;
+//		PreparedStatement pstm = null;
+//		
+//		// This get data in the DB
+//		ResultSet rset = null;
+//		
+//		try {
+//			conn = ConnectionFactory.createConnectionSQLServer();
+//			pstm = conn.prepareStatement(sql);
+//			rset = pstm.executeQuery();
+//			
+//			while (rset.next()) {
+//				Destination destination = new Destination();
+//				// get ID from DB
+//				destination.setDestinationID(rset.getInt("DestinationID"));
+//				// get TakeHere from DB
+//				destination.setTakeHere(rset.getString("TakeHere"));
+//				// get DeliverThere from DB
+//				destination.setDeliverThere(rset.getString("DeliverThere"));
+//				
+//				// Add the destinations taken, in the list
+//				destination.add(destination);
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				
+//				if (conn != null) {
+//					conn.close();
+//				}
+//				if (pstm != null) {
+//					pstm.close();
+//				}
+//				if (rset != null) {
+//					rset.close();
+//				}
+//				
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		} 
+//		return destinations;
+//	}
+}

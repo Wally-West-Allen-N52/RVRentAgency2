@@ -1,0 +1,27 @@
+package main;
+
+import dao.ContactUsDao;
+import models.ContactUs;
+
+public class ContactUsTest {
+
+	public static void main(String[] args) {
+		ContactUsDao contactUsDao = new ContactUsDao();
+		
+//		ContactUs contactUs = new ContactUs();
+//		contactUs.setEmail("garbagetotally@gmail.com");
+//		contactUs.setPhone("No phone");
+//		contactUs.setNewMessage("Second teste message");
+//		contactUsDao.save(contactUs);
+		
+		// =================== Remove method ================================
+		
+//		contactUsDao.removeById(3);
+		
+		// ======================== Updata method ===========================
+		ContactUs contactUs1 = new ContactUs();
+		contactUs1.setContactID(4);
+		contactUs1.setEmail("caramurusoftware@contato.com.ca");
+	}
+
+}

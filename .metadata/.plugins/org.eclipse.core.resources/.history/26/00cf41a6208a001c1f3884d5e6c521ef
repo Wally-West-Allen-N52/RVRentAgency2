@@ -1,0 +1,37 @@
+package dao;
+
+
+
+public class PromotionDao {
+	
+	public static void save(Destination destination) {
+
+		String sql = "INSERT INTO Destination (TakeHere, DeliverThere) VALUES (?, ?)";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, destination.getTakeHere());
+			pstm.setString(2, destination.getDeliverThere());
+
+			pstm.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

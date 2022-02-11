@@ -1,0 +1,7 @@
+package models;
+
+public class Promotion {
+	private int PromotionID;
+	private String Promotion;
+	private float Price;
+}

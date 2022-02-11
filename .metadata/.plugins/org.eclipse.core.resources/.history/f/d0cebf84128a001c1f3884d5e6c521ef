@@ -1,0 +1,6 @@
+package dao;
+
+public class ContactUsDao {
+	
+	String sql = "INSERT INTO ContactUs (Email, Phone, NewMessage) VALUES (?, ?, ?)";
+}

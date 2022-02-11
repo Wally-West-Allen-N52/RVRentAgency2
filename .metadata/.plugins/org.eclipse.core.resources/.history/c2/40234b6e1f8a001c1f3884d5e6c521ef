@@ -1,0 +1,18 @@
+package main;
+
+import dao.ContactUsDao;
+import models.ContactUs;
+
+public class ContactUsTest {
+
+	public static void main(String[] args) {
+		ContactUsDao contactUsDao = new ContactUsDao();
+		
+		ContactUs contactUs = new ContactUs();
+		contactUs.setEmail("dg@gmail.com");
+		contactUs.setPhone("4455-9887");
+		contactUs.setNewMessage("Message test");
+		ContactUsDao.save(contactUs);
+	}
+
+}

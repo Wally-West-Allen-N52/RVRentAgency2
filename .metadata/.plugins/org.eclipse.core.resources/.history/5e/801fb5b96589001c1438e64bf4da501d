@@ -1,0 +1,7 @@
+package models;
+
+public class Home {
+	private int HomeID;
+	private String ClientName;
+	private 
+}

@@ -1,0 +1,20 @@
+package main;
+
+import dao.HomeDao;
+import models.Home;
+
+public class HomeTest {
+
+	public static void main(String[] args) {
+		
+		HomeDao  homeDao = new HomeDao();
+		
+//		Home home = new Home();
+//		home.setClientName("Sparamus");
+//		
+//		homeDao.save(home);
+		
+		// ============================= Remove method ==================================
+	}
+
+}

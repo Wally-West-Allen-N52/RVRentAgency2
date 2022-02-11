@@ -1,0 +1,6 @@
+package dao;
+
+public class ContactDao {
+	
+	String sql = "INSERT INTO Cont";
+}

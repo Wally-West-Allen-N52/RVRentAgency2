@@ -1,0 +1,13 @@
+package factory;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class ConnectionFactory {
+
+	public static Connection createConnectionSQLServer() throws Exception {
+		
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost");
+	}
+}
