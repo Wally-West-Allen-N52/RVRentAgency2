@@ -2,6 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import factory.ConnectionFactory;
 import models.Destination;
@@ -106,5 +109,55 @@ public class DestinationDao {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+public List<Destination> getDestinations() {
+		
+		String sql = "select * from Destination";
+		
+		List<Destination> destinations = new ArrayList<Destination>();
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		// This get data in the DB
+		ResultSet rset = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			rset = pstm.executeQuery();
+
+			// While you have in DB do
+			while (rset.next()) {
+				Destination destination = new Destination();	
+				
+				// ========================= Destination Table =======================
+				destination.setDestinationID(rset.getInt("DestinationID"));
+				destination.setTakeHere(rset.getString("TakeHere"));
+				destination.setDeliverThere(rset.getString("DeliverThere"));
+				
+				destinations.add(destination);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+
+				if (conn != null) {
+					conn.close();
+				}
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (rset != null) {
+					rset.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return destinations;
 	}
 }

@@ -1,0 +1,38 @@
+package main;
+
+import dao.HomeDao;
+import models.Home;
+
+public class HomeTest {
+
+	public static void main(String[] args) {
+		
+		HomeDao  homeDao = new HomeDao();
+		
+		// ============================= Save method ==============================
+		Home home = new Home();
+		home.setClientName("Sparamus");
+		home.setHomeID(1);
+		home.setDestinationID(1);
+		home.setPromotionID(1);
+		
+		homeDao.save(home);
+		
+		// ============================= Remove method ==================================
+//		homeDao.removeById(2);
+		
+		// ============================= update method =================================
+//		Home home1 = new Home();
+//		home1.setHomeID(1);
+//		home1.setClientName("Nathalie Linda do Wallace");
+//		
+//		homeDao.update(home1);
+		
+		// ======================= Return list =======================================
+		
+//		for (Home h : homeDao.getHomes()) {
+//			System.out.println(h.getClientName());
+//		}
+	}
+
+}

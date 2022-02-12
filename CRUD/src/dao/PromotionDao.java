@@ -2,6 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import factory.ConnectionFactory;
 import models.Promotion;
@@ -108,5 +111,54 @@ public class PromotionDao {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+public List<Promotion> getPromotions() {
+		
+		String sql = "select * from Promotion";
+		
+		List<Promotion> promotions = new ArrayList<Promotion>();
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		// This get data in the DB
+		ResultSet rset = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionSQLServer();
+			pstm = conn.prepareStatement(sql);
+			rset = pstm.executeQuery();
+
+			// While you have in DB do
+			while (rset.next()) {
+				Promotion promotion = new Promotion();	
+				
+				// ========================= Promotion Table =======================
+				promotion.setPromotion(rset.getString("Promotion"));
+				promotion.setPrice(rset.getFloat("Price"));
+				
+				promotions.add(promotion);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+
+				if (conn != null) {
+					conn.close();
+				}
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (rset != null) {
+					rset.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return promotions;
 	}
 }

@@ -20,9 +20,9 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="models.Promotion"/>
     <fullyQualifiedTypeName name="models.Home"/>
     <fullyQualifiedTypeName name="dao.DestinationDao"/>
     <fullyQualifiedTypeName name="models.Destination"/>
+    <fullyQualifiedTypeName name="models.Promotion"/>
     <fullyQualifiedTypeName name="models.ContactUs"/>
 </qualifiedTypeNameHistroy>

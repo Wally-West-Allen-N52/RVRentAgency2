@@ -36,9 +36,9 @@ select * from ContactUs;
 CREATE TABLE Home (
 	HomeID int IDENTITY(1,1) primary key NOT NULL,
 	ClientName varchar(max) NOT NULL,
-	fkDestinationID  int NULL,
-	fkPromotionID  int NULL,
-	fkContactID int null,
+	fkDestinationID  int not null,
+	fkPromotionID  int not null,
+	fkContactID int not null,
 );
 insert into Home (ClientName, fkDestinationID, fkPromotionID, fkContactID) value ('Cliford Devue');
 	select * from Home;

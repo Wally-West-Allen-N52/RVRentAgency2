@@ -16,7 +16,7 @@ public class HomeDao {
 
 	public void save(Home home) {
 
-		String sql = "INSERT INTO Home (ClientName) VALUES (?)";
+		String sql = "INSERT INTO Home (ClientName, fkDestinationID, fkPromotionID, fkContactID) VALUES (?, ?, ?, ?)";
 
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -26,6 +26,9 @@ public class HomeDao {
 			pstm = conn.prepareStatement(sql);
 
 			pstm.setString(1, home.getClientName());
+			pstm.setInt(2, home.getDestinationID());
+			pstm.setInt(3, home.getPromotionID());
+			pstm.setInt(4, home.getContactID());
 
 			pstm.execute();
 
@@ -159,13 +162,17 @@ public class HomeDao {
 				// ========================= Promotion table =========================
 				promotion.setPromotionID(rset.getInt("PromotionID"));
 				promotion.setPromotion(rset.getString("Promotion"));
-				promotion.setPrice(rset.getFloat(53453));
+				promotion.setPrice(rset.getFloat("Price"));
 				
 				// ========================= ContactUs table =========================
 				contactUs.setContactID(rset.getInt("ContactID"));
 				contactUs.setEmail(rset.getString("Email"));
 				contactUs.setPhone(rset.getString("Phone"));
 				contactUs.setNewMessage(rset.getString("NewMessage"));
+				
+				home.setDestination(destination);
+				home.setPromotion(promotion);
+				home.setContact(contactUs);
 				
 				homes.add(home);
 			}

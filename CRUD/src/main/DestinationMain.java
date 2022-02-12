@@ -1,0 +1,36 @@
+package main;
+
+import dao.DestinationDao;
+import models.Destination;
+
+public class DestinationMain {
+
+	public static void main(String[] args) {
+		DestinationDao destinationDao = new DestinationDao();
+
+		// ========================= Save method ==============================
+		
+//		Destination destination = new Destination();
+//		destination.setTakeHere("Teste doido, doido");
+//		destination.setDeliverThere("Volta aqui doido");
+//	
+//		destinationDao.save(destination);
+	
+		// ================================ Remove method ==========================
+//		destinationDao.removeById(4);
+		
+		// ================================ Update method ====================
+//		Destination destination1 = new Destination();
+//		destination1.setDestinationID(1);
+//		destination1.setTakeHere("Cambaçamba");
+//		destination1.setDeliverThere("Flamingo-ningo");
+//		
+//		destinationDao.update(destination1);
+		
+		for (Destination d : destinationDao.getDestinations()) {
+			System.out.println("Take here: " + d.getDeliverThere()
+			+ "\nDeliver there: " + d.getDeliverThere());
+		}
+	}
+
+}
